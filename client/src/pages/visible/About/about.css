@@ -1,0 +1,19 @@
+.greytext {
+  color: gray;
+}
+
+/*
+.aboutbox {
+  overflow-y: scroll;
+}
+this shows scroll bar on about text side
+*/
+
+.hidescroll {
+  overflow: hidden;
+}
+
+.about-img {
+  max-width: 60%;
+  max-height: auto;
+}

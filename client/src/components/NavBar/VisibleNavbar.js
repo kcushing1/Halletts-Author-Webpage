@@ -1,4 +1,5 @@
 import React from "react";
+import "./navbar.css";
 import NavItem from "./NavItem";
 
 export default function VisibleNavbar() {
@@ -6,8 +7,8 @@ export default function VisibleNavbar() {
   //toggle button hamburger</p>
   //navlinks with href/reroute and text props
   return (
-    <nav className="row navbar sticky-top navbar-expand-lg outermost border-bottom">
-      <a className="navbar-brand" href="#page-top">
+    <nav className="row navbar sticky-top navbar-expand-lg border-bottom mx-3">
+      <a className="navbar-brand text-dark" href="#page-top">
         Hallett Sargent
       </a>
 

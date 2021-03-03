@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import About from "./pages/visible/About";
+import About from "./pages/visible/About/About";
 
 function App() {
   return (
