@@ -3,10 +3,9 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 //const sequelize = require("sequelize");
 const routes = require("./routes");
+require("dotenv").config();
 
-//require("dotenv").config();
-
-//const db = require("./models");
+const db = require("./models");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -20,8 +19,8 @@ app.use(express.json());
 app.use(routes);
 
 // Start the API server
-//db.sequelize.sync().then(function () {
-app.listen(PORT, function () {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+db.sequelize.sync().then(function () {
+  app.listen(PORT, function () {
+    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+  });
 });
-//});

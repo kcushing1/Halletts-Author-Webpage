@@ -42,7 +42,7 @@ export default function Contact() {
             <FormInput type="text" id="Email" placeholder="Your Email" />
             <textarea
               id="message"
-              class="form-control m-3 p-2"
+              className="form-control m-3 p-2"
               placeholder="Your Message Here"
             ></textarea>
           </div>
