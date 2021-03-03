@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         validate: {
           len: [1],
         },
-      },,
+      },
       email: DataTypes.STRING,
       //add email validation
       text: {
