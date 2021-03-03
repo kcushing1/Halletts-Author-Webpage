@@ -1,21 +1,9 @@
 //POST from admin
 //GET to public
+const express = require("express");
+const FlashFictionController = require("../../controllers/FlashFictionController");
+const router = express.Router();
 
-const db = require("../../models")
+router.get("/", FlashFictionController.test);
 
-module.exports function (app) {
-  //get all flash fiction
-  app.get("/api/flashfiction", (req,res) =>{
-    //db.FlashFiction.findAll({})
-    // .then((story) => {
-    //   res.json(story)
-    // })
-    res.send("get all flash fiction")
-  })
-
-  //post new story
-  app.post("/api/flashfiction", (req,res) => {
-    let story = req.body
-    console.log(story)
-  })
-}
+module.exports = router;
