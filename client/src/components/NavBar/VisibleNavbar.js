@@ -8,7 +8,7 @@ export default function VisibleNavbar() {
   //navlinks with href/reroute and text props
   return (
     <nav className="row navbar navbar-expand-lg border-bottom mx-3">
-      <a className="navbar-brand nav-hallett" href="#page-top">
+      <a className="navbar-brand nav-hallett" href="/">
         HALLETT
       </a>
 
@@ -29,11 +29,11 @@ export default function VisibleNavbar() {
         id="navbarNav"
       >
         <ul className="navbar-nav">
-          <NavItem text="HOME" href="#home" />
-          <NavItem text="ABOUT" href="#about" />
-          <NavItem text="BOOKS" href="#books" />
-          <NavItem text="FLASH FICTION" href="#flashfiction" />
-          <NavItem text="CONTACT" href="#contact" />
+          <NavItem text="HOME" href="/" />
+          <NavItem text="ABOUT" href="about" />
+          <NavItem text="BOOKS" href="books" />
+          <NavItem text="FLASH FICTION" href="flashfiction" />
+          <NavItem text="CONTACT" href="contact" />
         </ul>
       </div>
     </nav>
