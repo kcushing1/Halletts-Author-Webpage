@@ -17,13 +17,17 @@ export default function Home() {
             are in the right place!
           </p>
 
-          <IconContext.Provider value={{ size: "3em" }}>
-            <div>
-              <p className="mx-4 greytext">
-                <BsArrowRight />
-                Start Reading!
-              </p>
-            </div>
+          <IconContext.Provider
+            value={{
+              size: "3em",
+              length: "30em",
+              className: "arrow-hover greytext",
+            }}
+          >
+            <Row>
+              <BsArrowRight />
+              <p className="mx-4 greytext ">Start Reading!</p>
+            </Row>
           </IconContext.Provider>
         </div>
         <div className="col">
