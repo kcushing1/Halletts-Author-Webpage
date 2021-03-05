@@ -6,7 +6,7 @@ export default function ({ href, text }) {
   return (
     <>
       <li>
-        <a className="nav-link navbar-text" href={href}>
+        <a className="nav-link navbar-text nav-lines" href={href}>
           {text}
         </a>
       </li>

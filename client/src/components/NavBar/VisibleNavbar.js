@@ -7,9 +7,9 @@ export default function VisibleNavbar() {
   //toggle button hamburger</p>
   //navlinks with href/reroute and text props
   return (
-    <nav className="row navbar sticky-top navbar-expand-lg border-bottom mx-3">
-      <a className="navbar-brand text-dark" href="#page-top">
-        Hallett Sargent
+    <nav className="row navbar navbar-expand-lg border-bottom mx-3">
+      <a className="navbar-brand nav-hallett" href="#page-top">
+        HALLETT
       </a>
 
       <button
@@ -29,11 +29,11 @@ export default function VisibleNavbar() {
         id="navbarNav"
       >
         <ul className="navbar-nav">
-          <NavItem text="Home" href="#" />
-          <NavItem text="About" href="#" />
-          <NavItem text="Books" href="#" />
-          <NavItem text="Flash Fiction" href="#" />
-          <NavItem text="Contact" href="#" />
+          <NavItem text="HOME" href="#" />
+          <NavItem text="ABOUT" href="#" />
+          <NavItem text="BOOKS" href="#" />
+          <NavItem text="FLASH FICTION" href="#" />
+          <NavItem text="CONTACT" href="#" />
         </ul>
       </div>
     </nav>

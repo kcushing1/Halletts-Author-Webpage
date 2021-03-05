@@ -2,10 +2,6 @@ const db = require("../models");
 const FlashFiction = db.flashfictions;
 
 module.exports = {
-  test: function (req, res) {
-    const stories = "stories list";
-    res.send(stories);
-  },
   //get all
   findAll: (req, res) => {
     db.FlashFiction.findAll({})

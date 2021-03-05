@@ -9,12 +9,11 @@ import Image from "../../../utils/Image";
 
 export default function About() {
   return (
-    <Container>
-      <VisibleNavbar />
+    <div>
       <div className="row m-3 hidescroll">
-        <div className="col aboutbox">
+        <div className="col aboutbox text-left">
           <h4>An author and educator with a strong curiosity</h4>
-          <p className="greytext">
+          <p className="greytext text-left">
             Lorem ipsum dolor sit amet, dolore soleat cum te, sint equidem an
             sea. Nec vide nonumy tibique at, eum id porro periculis adolescens.
             Ea sed modo dictas eligendi. Aperiri dolores sit te, id sea eros
@@ -33,8 +32,6 @@ export default function About() {
           />
         </Col>
       </div>
-
-      <Footer />
-    </Container>
+    </div>
   );
 }

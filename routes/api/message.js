@@ -4,9 +4,9 @@ const express = require("express");
 const MessageController = require("../../controllers/MessageController");
 const router = express.Router();
 
-router.get("/findAll", MessageController.findAll);
+router.get("/", MessageController.findAll);
 router.get("/:id", MessageController.findOne);
 router.post("/create", MessageController.create);
-router.delete("/:id", MessageController.delete);
+router.delete("/delete/:id", MessageController.delete);
 
 module.exports = router;

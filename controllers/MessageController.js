@@ -2,11 +2,6 @@ const db = require("../models");
 const Message = db.messages;
 
 module.exports = {
-  test: function (req, res) {
-    const message = "message list";
-    res.send(message);
-  },
-
   //post message
   create: (req, res) => {
     let message = req.body;
