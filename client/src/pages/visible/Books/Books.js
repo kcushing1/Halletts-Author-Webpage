@@ -7,7 +7,7 @@ import Button from "../../../utils/Button";
 
 export default function Books() {
   return (
-    <Row>
+    <Row id="books">
       <div className="col-3 ">
         <img
           src="./images/handflower.jpg"

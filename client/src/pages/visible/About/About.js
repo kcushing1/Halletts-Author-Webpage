@@ -9,7 +9,7 @@ import Image from "../../../utils/Image";
 
 export default function About() {
   return (
-    <div>
+    <div id="about">
       <div className="row m-3 hidescroll">
         <div className="col aboutbox text-left">
           <h4>An author and educator with a strong curiosity</h4>

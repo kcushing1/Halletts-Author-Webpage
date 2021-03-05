@@ -7,7 +7,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 export default function Home() {
   return (
-    <div>
+    <div id="home">
       <Row>
         <div className="col text-left ml-4">
           <h1>WELCOME!</h1>

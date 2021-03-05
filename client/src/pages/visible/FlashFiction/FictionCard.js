@@ -3,7 +3,7 @@ import Image from "../../../utils/Image";
 
 export default function FictionCard({ src, title, text }) {
   return (
-    <div className="card">
+    <div className="card m-3">
       <div className="card-title">
         <h3>{title}</h3>
       </div>

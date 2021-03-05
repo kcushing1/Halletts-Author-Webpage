@@ -8,7 +8,7 @@ import { SocialIcon } from "react-social-icons";
 
 export default function Contact() {
   return (
-    <Row>
+    <Row id="contact">
       <Col>
         <Row>
           <div className="col m-3">

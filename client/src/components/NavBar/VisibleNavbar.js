@@ -29,11 +29,11 @@ export default function VisibleNavbar() {
         id="navbarNav"
       >
         <ul className="navbar-nav">
-          <NavItem text="HOME" href="#" />
-          <NavItem text="ABOUT" href="#" />
-          <NavItem text="BOOKS" href="#" />
-          <NavItem text="FLASH FICTION" href="#" />
-          <NavItem text="CONTACT" href="#" />
+          <NavItem text="HOME" href="#home" />
+          <NavItem text="ABOUT" href="#about" />
+          <NavItem text="BOOKS" href="#books" />
+          <NavItem text="FLASH FICTION" href="#flashfiction" />
+          <NavItem text="CONTACT" href="#contact" />
         </ul>
       </div>
     </nav>

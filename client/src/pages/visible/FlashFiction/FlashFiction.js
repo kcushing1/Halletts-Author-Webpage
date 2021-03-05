@@ -6,7 +6,7 @@ export default function FlashFiction() {
   const stories = useContext(StoryContext);
 
   return (
-    <div>
+    <div id="flashfiction">
       <p>flash fiction here</p>
       {stories.map((story) => {
         return (

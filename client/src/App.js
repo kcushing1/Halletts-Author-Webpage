@@ -32,13 +32,29 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Container>
-          <VisibleNavbar />
-          <StoryContext.Provider value={stories}>
-            <FlashFiction />
-          </StoryContext.Provider>
-          <Footer />
-        </Container>
+        <Switch>
+          <Container>
+            <VisibleNavbar />
+            <StoryContext.Provider value={stories}>
+              <Route exact path="/about">
+                <About />
+              </Route>
+              <Route exact path="/books">
+                <Books />
+              </Route>
+              <Route exact path="/flashfiction">
+                <FlashFiction />
+              </Route>
+              <Route exact path="/contact">
+                <Contact />
+              </Route>
+              <Route exact path="/">
+                <Home />
+              </Route>
+            </StoryContext.Provider>
+            <Footer />
+          </Container>
+        </Switch>
       </div>
     </BrowserRouter>
   );
