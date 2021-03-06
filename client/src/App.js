@@ -10,18 +10,17 @@ import Container from "./components/Container/Container";
 import Books from "./pages/visible/Books/Books";
 import Home from "./pages/visible/Home/Home";
 import StoryContext from "./contexts/StoryContext";
+import AdminNavbar from "./components/NavBar/AdminNavbar";
+import AdminHome from "./pages/admin/AdminHome";
 
 function App() {
   const [stories, setStories] = useState([]);
 
   function loadStories() {
-    console.log("loadStories ftn");
-
     let stories = fetch("/api/flashfiction/");
     stories
       .then((resp) => resp.json())
       .then((res) => {
-        console.log("res is: ", res);
         setStories(res);
       });
   }

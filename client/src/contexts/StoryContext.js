@@ -4,8 +4,8 @@ const StoryContext = React.createContext({
   id: Number,
   title: "",
   image: "",
-  createdAt: "description",
-  updatedAt: "github",
+  createdAt: "",
+  updatedAt: "",
 });
 
 export default StoryContext;

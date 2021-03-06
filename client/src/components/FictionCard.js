@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "../../../utils/Image";
+import Image from "../utils/Image";
 
 export default function FictionCard({ src, title, text }) {
   return (
