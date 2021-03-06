@@ -13,7 +13,7 @@ export default function AdminNavbar() {
       </a>
 
       <button
-        className="navbar-toggler"
+        className="navbar-toggler navbar-light greytext border"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNav"
