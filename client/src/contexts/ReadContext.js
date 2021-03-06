@@ -3,10 +3,9 @@ import React from "react";
 const StoryContext = React.createContext({
   id: Number,
   title: "",
-  text: "",
   image: "",
-  createdAt: "",
-  updatedAt: "",
+  text: "",
+  update: () => {},
 });
 
 export default StoryContext;

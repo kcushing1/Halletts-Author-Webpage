@@ -1,4 +1,10 @@
 #readingbox {
   border: solid 1px lightgrey;
-  margin: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-right: 5em;
+  margin-left: 5em;
+  overflow-y: scroll;
+  padding: 2em;
+  max-height: 30em;
 }

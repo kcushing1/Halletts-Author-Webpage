@@ -3,17 +3,14 @@ import "./navbar.css";
 import NavItem from "./NavItem";
 
 export default function VisibleNavbar() {
-  //Hallett Sargent as a-tag to home page</p>
-  //toggle button hamburger</p>
-  //navlinks with href/reroute and text props
   return (
-    <nav className="row navbar navbar-expand-lg border-bottom mx-3">
+    <nav className="navbar navbar-expand-md border-bottom mx-3">
       <a className="navbar-brand nav-hallett" href="/">
         HALLETT
       </a>
 
       <button
-        className="navbar-toggler"
+        className="navbar-toggler navbar-light greytext border"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNav"
@@ -21,7 +18,7 @@ export default function VisibleNavbar() {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span className="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon "></span>
       </button>
 
       <div

@@ -12,9 +12,21 @@ import Home from "./pages/visible/Home/Home";
 import StoryContext from "./contexts/StoryContext";
 import AdminNavbar from "./components/NavBar/AdminNavbar";
 import AdminHome from "./pages/admin/AdminHome";
+import ReadContext from "./contexts/ReadContext";
 
 function App() {
   const [stories, setStories] = useState([]);
+  const [read, setRead] = useState([]);
+  const placeholderStory = {
+    id: 0,
+    title: "example title",
+    text:
+      "Lorem ipsum dolor sit amet, dolore soleat cum te, sint equidem an sea. Nec vide nonumy tibique at, eum id porro periculis adolescens.Ea sed modo dictas eligendi. Aperiri dolores sit te, id sea eros molestie. Pri et latine percipit pertinax, ad duo tamquam nominati periculis. An duo hinc persecuti, ius scaevola mandamus ad. In nulla erroribus theophrastus quo, ne atqui mundi tritani nam, et sed agam efficiantur. Ei bonorum urbanitas cotidieque pro, quem dicant pro te. Facilis reprimique pro cu. Ullum delenit dignissim ius ea.Lorem ipsum dolor sit amet, dolore soleat cum te, sint equidem an sea. Nec vide nonumy tibique at, eum id porro periculis adolescens.Ea sed modo dictas eligendi. Aperiri dolores sit te, id sea eros molestie. Pri et latine percipit pertinax, ad duo tamquam nominati periculis. An duo hinc persecuti, ius scaevola mandamus ad. In nulla erroribus theophrastus quo, ne atqui mundi tritani nam, et sed agam efficiantur. Ei bonorum urbanitas cotidieque pro, quem dicant pro te. Facilis reprimique pro cu. Ullum delenit dignissim ius ea.Lorem ipsum dolor sit amet, dolore soleat cum te, sint equidem an sea. Nec vide nonumy tibique at, eum id porro periculis adolescens.Ea sed modo dictas eligendi. Aperiri dolores sit te, id sea eros molestie. Pri et latine percipit pertinax, ad duo tamquam nominati periculis. An duo hinc persecuti, ius scaevola mandamus ad. In nulla erroribus theophrastus quo, ne atqui mundi tritani nam, et sed agam efficiantur. Ei bonorum urbanitas cotidieque pro, quem dicant pro te. Facilis reprimique pro cu. Ullum delenit dignissim ius ea.Lorem ipsum dolor sit amet, dolore soleat cum te, sint equidem an sea. Nec vide nonumy tibique at, eum id porro periculis adolescens.Ea sed modo dictas eligendi. Aperiri dolores sit te, id sea eros molestie. Pri et latine percipit pertinax, ad duo tamquam nominati periculis. An duo hinc persecuti, ius scaevola mandamus ad. In nulla erroribus theophrastus quo, ne atqui mundi tritani nam, et sed agam efficiantur. Ei bonorum urbanitas cotidieque pro, quem dicant pro te. Facilis reprimique pro cu. Ullum delenit dignissim ius ea.",
+    image: "./images/thumbnails/bread_tn.jpg",
+  };
+  const update = (data) => {
+    setRead({ ...read, ...data });
+  };
 
   function loadStories() {
     let stories = fetch("/api/flashfiction/");
@@ -27,7 +39,10 @@ function App() {
 
   useEffect(() => {
     loadStories();
+    setRead({ ...placeholderStory, ...update });
+    console.log("read is", read);
   }, []);
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -35,21 +50,23 @@ function App() {
           <Container>
             <VisibleNavbar />
             <StoryContext.Provider value={stories}>
-              <Route exact path="/about">
-                <About />
-              </Route>
-              <Route exact path="/books">
-                <Books />
-              </Route>
-              <Route exact path="/flashfiction">
-                <FlashFiction />
-              </Route>
-              <Route exact path="/contact">
-                <Contact />
-              </Route>
-              <Route exact path="/">
-                <Home />
-              </Route>
+              <ReadContext.Provider value={read}>
+                <Route exact path="/about">
+                  <About />
+                </Route>
+                <Route exact path="/books">
+                  <Books />
+                </Route>
+                <Route exact path="/flashfiction">
+                  <FlashFiction />
+                </Route>
+                <Route exact path="/contact">
+                  <Contact />
+                </Route>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+              </ReadContext.Provider>
             </StoryContext.Provider>
             <Footer />
           </Container>

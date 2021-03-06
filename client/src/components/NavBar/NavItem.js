@@ -5,7 +5,7 @@ export default function ({ href, text }) {
   //a tag needs href for new page
   return (
     <>
-      <li>
+      <li className="nav-item">
         <a className="nav-link navbar-text nav-lines" href={href}>
           {text}
         </a>
