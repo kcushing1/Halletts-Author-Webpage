@@ -13,6 +13,8 @@ import StoryContext from "./contexts/StoryContext";
 import AdminNavbar from "./components/NavBar/AdminNavbar";
 import AdminHome from "./pages/admin/AdminHome";
 import ReadContext from "./contexts/ReadContext";
+import AdminFlashFiction from "./pages/admin/AdminFlashFiction";
+import Messages from "./pages/admin/Messages";
 
 function App() {
   const [stories, setStories] = useState([]);
@@ -48,9 +50,30 @@ function App() {
       <div className="App">
         <Switch>
           <Container>
-            <VisibleNavbar />
             <StoryContext.Provider value={stories}>
               <ReadContext.Provider value={read}>
+                <Route
+                  exact
+                  path={["/admin", "/admin/flashfiction", "/admin/messages"]}
+                >
+                  <AdminNavbar />
+                </Route>
+                <Route exact path="/admin">
+                  <AdminHome />
+                </Route>
+                <Route exact path="/admin/flashfiction">
+                  <AdminFlashFiction />
+                </Route>
+                <Route exact path="/admin/messages">
+                  <Messages />
+                </Route>
+
+                <Route
+                  exact
+                  path={["/", "/about", "/flashfiction", "/contact"]}
+                >
+                  <VisibleNavbar />
+                </Route>
                 <Route exact path="/about">
                   <About />
                 </Route>
