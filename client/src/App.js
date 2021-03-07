@@ -70,7 +70,7 @@ function App() {
 
                 <Route
                   exact
-                  path={["/", "/about", "/flashfiction", "/contact"]}
+                  path={["/", "/about", "/books", "/flashfiction", "/contact"]}
                 >
                   <VisibleNavbar />
                 </Route>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import "./contact.css";
 import Container from "../../../components/Container/Container";
 import VisibleNavbar from "../../../components/NavBar/VisibleNavbar";
 import Col from "../../../utils/Col";
@@ -7,6 +8,32 @@ import Row from "../../../utils/Row";
 import { SocialIcon } from "react-social-icons";
 
 export default function Contact() {
+  const [message, setMessage] = useState([]);
+
+  function handleInputChange(e) {
+    const { name, value } = e.target;
+    console.log("name and value", name, value);
+    setMessage({ ...message, [name]: value });
+  }
+
+  function handleSubmitMessage(e) {
+    console.log("btn clicked message", message);
+    if (message.name && message.email && message.text) {
+      const send = fetch("/api/message/create", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(message),
+      });
+      send
+        .then((resp) => resp.json())
+        .then((res) => {
+          console.log("res post msg", res);
+        });
+    }
+  }
+
   return (
     <Row id="contact">
       <Col>
@@ -44,13 +71,34 @@ export default function Contact() {
 
       <Col>
         <div className="form-group pr-4 mx-5">
-          <FormInput id="sayhi" placeholder="Your Name" type="text" />
-          <FormInput type="text" id="Email" placeholder="Your Email" />
+          <FormInput
+            id="sayhi"
+            placeholder="Your Name"
+            type="text"
+            name="name"
+            onChange={handleInputChange}
+          />
+          <FormInput
+            type="text"
+            id="Email"
+            placeholder="Your Email"
+            name="email"
+            onChange={handleInputChange}
+          />
           <textarea
             id="message"
             className="form-control m-3 p-2"
             placeholder="Your Message Here"
+            name="text"
+            onChange={handleInputChange}
           ></textarea>
+          <button
+            type="button"
+            className="btn border contact-btn"
+            onClick={handleSubmitMessage}
+          >
+            Send Message
+          </button>
         </div>
       </Col>
     </Row>

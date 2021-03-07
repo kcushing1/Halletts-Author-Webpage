@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function FormInput({ type, id, placeholder }) {
+export default function FormInput({ type, id, placeholder, name, onChange }) {
   return (
     <input
       type={type}
@@ -8,6 +8,8 @@ export default function FormInput({ type, id, placeholder }) {
       id={id}
       aria-describedby={id}
       placeholder={placeholder}
+      name={name}
+      onChange={onChange}
     ></input>
   );
 }
