@@ -66,6 +66,7 @@ export default function AdminFlashFiction() {
           onChange={handleInputChange}
           btnClick={handlePostNewStory}
         />
+        <p>upload image here, make sure not too large</p>
       </div>
     </div>
   );
