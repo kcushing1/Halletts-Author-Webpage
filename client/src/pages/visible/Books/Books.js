@@ -8,7 +8,7 @@ import Button from "../../../utils/Button";
 export default function Books() {
   return (
     <Row id="books">
-      <div className="col-3 ">
+      <div className="col-4 ">
         <img
           src="./images/handflower.jpg"
           alt="Book Cover Example"
@@ -19,7 +19,9 @@ export default function Books() {
         <Row>
           <Col>
             <h2>Our Bathroom Mirror</h2>
-            <p>"This book is the total bomb dot com, yo" -Kasey</p>
+            <p className="cursive">
+              "This book is the total bomb dot com, yo" -Kasey
+            </p>
           </Col>
         </Row>
         <Row>
@@ -37,14 +39,14 @@ export default function Books() {
             </p>
           </Col>
         </Row>
-        <Row>
+        <div className=" row mt-4">
           <Col>
-            <p>
+            <p className="greytext">
               We don't yet know the release date, but in the meantime find your
               next great read!
             </p>
           </Col>
-        </Row>
+        </div>
         <Row>
           <Col>
             <Button

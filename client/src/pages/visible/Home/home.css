@@ -2,6 +2,15 @@
   color: gray;
 }
 
-.arrow-hover:hover {
-  transform: scaleX(3) !important;
+#arrow-line:hover {
+  transform: scaleX(2) !important;
+}
+
+#arrow-line {
+  max-width: 8em;
+  max-height: auto;
+}
+#arrow-head {
+  max-width: 1.5em;
+  max-height: auto;
 }

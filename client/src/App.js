@@ -15,6 +15,7 @@ import AdminHome from "./pages/admin/AdminHome";
 import ReadContext from "./contexts/ReadContext";
 import AdminFlashFiction from "./pages/admin/AdminFlashFiction";
 import Messages from "./pages/admin/Messages";
+import Login from "./pages/admin/Login";
 
 function App() {
   const [stories, setStories] = useState([]);
@@ -52,6 +53,10 @@ function App() {
           <Container>
             <StoryContext.Provider value={stories}>
               <ReadContext.Provider value={read}>
+                <Route exact path="/login">
+                  <Login />
+                </Route>
+
                 <Route
                   exact
                   path={["/admin", "/admin/flashfiction", "/admin/messages"]}

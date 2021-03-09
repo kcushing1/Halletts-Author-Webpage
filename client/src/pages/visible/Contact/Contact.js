@@ -9,10 +9,10 @@ import { SocialIcon } from "react-social-icons";
 
 export default function Contact() {
   const [message, setMessage] = useState([]);
+  const [messageSent, setMessageSent] = useState({ hasBeenSent: false });
 
   function handleInputChange(e) {
     const { name, value } = e.target;
-    console.log("name and value", name, value);
     setMessage({ ...message, [name]: value });
   }
 
@@ -30,8 +30,14 @@ export default function Contact() {
         .then((resp) => resp.json())
         .then((res) => {
           console.log("res post msg", res);
+          setMessageSent({ hasBeenSent: true });
+          clearInput("sayhi");
         });
     }
+  }
+
+  function clearInput() {
+    document.getElementById("sayhi").value("'");
   }
 
   return (
@@ -70,6 +76,9 @@ export default function Contact() {
       </Col>
 
       <Col>
+        {messageSent.hasBeenSent && (
+          <h5 className="greytext">You sent a message to Hallett!</h5>
+        )}
         <div className="form-group pr-4 mx-5">
           <FormInput
             id="sayhi"

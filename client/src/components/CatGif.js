@@ -22,7 +22,7 @@ export default function CatGif() {
   }
 
   useEffect(() => {
-    loadGiphy();
+    //loadGiphy();
   }, []);
 
   return (

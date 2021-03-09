@@ -50,7 +50,6 @@ module.exports = {
       },
     })
       .then((deleteStory) => {
-        console.log("the message has been deleted");
         res.json(deleteStory);
       })
       .catch((err) => console.log("error is: ", err));

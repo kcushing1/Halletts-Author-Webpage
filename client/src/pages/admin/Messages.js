@@ -20,14 +20,19 @@ export default function Messages() {
   }, []);
 
   function handleClickName(e) {
-    // let nameId = e.target.id;
-    console.log("the id is", e.target.id);
     let getMsg = fetch("/api/message/" + e.target.id);
     getMsg
       .then((resp) => resp.json())
       .then((res) => {
         setSpecificMessage(res);
       });
+  }
+
+  function handleDeleteMessage(e) {
+    let bye = fetch("/api/message/delete/" + e.target.id, {
+      method: "DELETE",
+    });
+    bye.then((resp) => resp.json()).then((res) => loadMessages());
   }
 
   return (
@@ -45,7 +50,7 @@ export default function Messages() {
                 return (
                   <List
                     item={msg.name}
-                    key={msg.name}
+                    key={msg.id}
                     onClick={handleClickName}
                     id={msg.id}
                   />
@@ -55,11 +60,21 @@ export default function Messages() {
           </div>
           <div className="col border rounded mb-4 mx-4">
             {specificMessage.id ? (
-              <MessageBox
-                name={specificMessage.name}
-                email={specificMessage.email}
-                text={specificMessage.text}
-              />
+              <>
+                <MessageBox
+                  name={specificMessage.name}
+                  email={specificMessage.email}
+                  text={specificMessage.text}
+                />
+                <button
+                  type="button"
+                  className="btn border delete-btn"
+                  id={specificMessage.id}
+                  onClick={handleDeleteMessage}
+                >
+                  Delete Message
+                </button>
+              </>
             ) : (
               <h2 className="greytext align-self-middle">
                 Click a name to read their message!
