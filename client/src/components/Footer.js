@@ -13,7 +13,7 @@ export default function Footer() {
           className="greytext text-small"
         >
           <p>
-            <small>Made with love by Kasey</small>
+            <small>Made with ❤️️ by Kasey</small>
           </p>
         </a>
       </div>

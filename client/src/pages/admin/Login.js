@@ -1,36 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import Col from "../../utils/Col";
 import FormInput from "../../utils/FormInput";
 import Row from "../../utils/Row";
 import "./admin.css";
 
-//https://bootsnipp.com/snippets/dldxB
-//just like this one
-
 export default function Login() {
+  const [user, setUser] = useState([]);
+
   function handleInputChange(e) {
-    console.log("input change");
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
+  }
+
+  function handleLogin(e) {
+    console.log("log in, suckers");
   }
 
   return (
-    <div id="form-content">
-      <div className="fadeIn first">
-        <h4>Log In</h4>
-      </div>
+    <div className="p-5">
       <form className="mx-5">
-        <FormInput
-          type="text"
-          id="username"
-          placeholder="Username"
-          onChange={handleInputChange}
-        />
-        <button type="button" className="btn btn-primary">
-          Log In
+        <h2 className="text-center">Log in</h2>
+        <div className="form-group">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Username"
+            required="required"
+            name="username"
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="password"
+            className="form-control"
+            placeholder="Password"
+            required="required"
+            name="password"
+            onChange={handleInputChange}
+          />
+        </div>
+        <button
+          type="button"
+          className="btn border greytext"
+          onClick={handleLogin}
+        >
+          Log in
         </button>
       </form>
-      <div id="formFooter">
-        <a class="greytext" href="/">
-          Back to Main Site
+      <div id="formFooter" className="m-3">
+        <a className="greytext" href="/">
+          Not an admininistrator? Back to Main Site
         </a>
       </div>
     </div>
