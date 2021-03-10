@@ -27,12 +27,40 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="col">
-          <img
-            src="./images/tweetsexpl.jpg"
-            alt="Twitter Musings Example"
-            id="tweets"
-          />
+        <div className="col mr-2 mb-4">
+          <Row>
+            <div className="col m-1">
+              <img src="/images/thumbnails/flowers_tn.jpg" />
+            </div>
+            <div className="col m-1">
+              <img src="/images/thumbnails/flowers_tn.jpg" />
+            </div>
+            <div className="col m-1">
+              <img src="/images/thumbnails/flowers_tn.jpg" />
+            </div>
+          </Row>
+          <Row>
+            <div className="col m-1">
+              <img src="/images/thumbnails/flowers_tn.jpg" />
+            </div>
+            <div className="col m-1">
+              <img src="/images/thumbnails/flowers_tn.jpg" />
+            </div>
+            <div className="col m-1">
+              <img src="/images/thumbnails/flowers_tn.jpg" />
+            </div>
+          </Row>
+          <Row>
+            <div className="col m-1">
+              <img src="/images/thumbnails/flowers_tn.jpg" />
+            </div>
+            <div className="col m-1">
+              <img src="/images/thumbnails/flowers_tn.jpg" />
+            </div>
+            <div className="col m-1">
+              <img src="/images/thumbnails/flowers_tn.jpg" />
+            </div>
+          </Row>
         </div>
       </Row>
     </div>
