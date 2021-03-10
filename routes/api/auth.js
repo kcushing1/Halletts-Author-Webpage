@@ -15,11 +15,11 @@ router.post(
 
 router.post(
   "/signup",
-  UserController.signup,
-  passport.authenticate("local-signup", {
-    successRedirect: "/admin",
-    failureRedirect: "/login",
-  })
+  UserController.signup
+  // passport.authenticate("local-signup", {
+  //   successRedirect: "/admin",
+  //   failureRedirect: "/login",
+  // })
 );
 
 router.get("/logout", UserController.logout);

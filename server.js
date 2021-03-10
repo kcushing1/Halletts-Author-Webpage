@@ -17,7 +17,7 @@ app.use(express.json());
 //for passport
 app.use(
   session({
-    secret: process.env.SECRET || "GreeBeFree",
+    secret: process.env.SECRET || "FreeGree",
     resave: true,
     saveUninitialized: true,
   })

@@ -1,6 +1,7 @@
 "use strict";
 const { triggerAsyncId } = require("async_hooks");
 const { Model } = require("sequelize");
+const bcrypt = require("bcryptjs");
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -27,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         validate: {
           len: [8, 86],
-          is: /^([a-zA-Z0-9 _-]+)$/i,
+          //is: /^([a-zA-Z0-9 _-]+)$/i,
         },
       },
     },
@@ -37,8 +38,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
-  User.prototype.validPassword = function (password) {
-    return password === this.password;
+  User.prototype.validPassword = async function (password) {
+    return await bcrypt.compare(password, this.password);
   };
 
   return User;

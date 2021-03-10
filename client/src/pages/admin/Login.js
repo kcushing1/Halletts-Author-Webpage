@@ -27,11 +27,11 @@ export default function Login() {
     });
 
     allowUser
-      .then((resp) => {
-        resp.json();
-        console.log("after fetch login");
-      })
-      .then((user) => console.log("in the clear", user));
+      // .then((resp) => {
+      //   resp.json();
+      //   console.log("after fetch login");
+      // })
+      .then((user) => (window.location.href = "/admin"));
   }
   function handleCreateUser(e) {
     console.log("create user ftn");
@@ -39,7 +39,6 @@ export default function Login() {
       username: user.username,
       password: user.password,
     };
-    console.log(loginData);
     if (!loginData.username || !loginData.password) return;
 
     const newUser = fetch("/api/auth/signup", {
@@ -49,9 +48,7 @@ export default function Login() {
       },
       body: JSON.stringify(loginData),
     });
-    newUser
-      //.then((resp) => resp.json())
-      .then((res) => (window.location.href = "/admin"));
+    newUser.then((res) => (window.location.href = "/admin"));
   }
 
   return (
