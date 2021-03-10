@@ -50,8 +50,8 @@ export default function Login() {
       body: JSON.stringify(loginData),
     });
     newUser
-      .then((resp) => resp.json())
-      .then((res) => console.log("maybe created?"));
+      //.then((resp) => resp.json())
+      .then((res) => (window.location.href = "/admin"));
   }
 
   return (
