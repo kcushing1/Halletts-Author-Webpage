@@ -20,8 +20,11 @@ module.exports = (sequelize, DataTypes) => {
           len: [1],
         },
       },
-      email: DataTypes.STRING,
-      //add email validation
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        isEmail: true,
+      },
       text: {
         type: DataTypes.STRING,
         allowNull: false,

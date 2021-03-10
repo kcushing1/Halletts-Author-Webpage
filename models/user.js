@@ -1,7 +1,8 @@
 "use strict";
+const { triggerAsyncId } = require("async_hooks");
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class FlashFiction extends Model {
+  class User extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,28 +12,31 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  FlashFiction.init(
+  User.init(
     {
-      title: {
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+          len: [5, 40],
+        },
+      },
+      password: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [1],
+          len: [8, 86],
+          is: /^([a-zA-Z0-9 _-]+)$/i,
+          msg:
+            "Password must contain only alphanumeric characters, - or _, and have a length of 8 to 86 characters.",
         },
       },
-      text: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1, 3500],
-        },
-      },
-      image: DataTypes.STRING,
     },
     {
       sequelize,
-      modelName: "FlashFiction",
+      modelName: "User",
     }
   );
-  return FlashFiction;
+  return User;
 };

@@ -36,6 +36,12 @@ function App() {
 
   useEffect(() => {
     loadStories();
+    // setRead({
+    //   ...read,
+    //   title: "title",
+    //   text: "text",
+    //   image: "./images/thumbnails/flowers_tn.jpg",
+    // });
   }, []);
 
   return (

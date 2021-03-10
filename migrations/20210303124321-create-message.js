@@ -17,12 +17,14 @@ module.exports = {
       },
       email: {
         type: Sequelize.STRING,
+        isEmail: true,
       },
       text: {
         type: Sequelize.STRING,
         allowNull: false,
         validate: {
-          len: [1],
+          len: [1, 500],
+          msg: "Your message is too long!",
         },
       },
       createdAt: {

@@ -22,7 +22,7 @@ export default function Home() {
               <div className="arrow-holder">
                 <img src="./images/download2.png" id="arrow-line" />
 
-                <p class="disappear greytext mt-2 ml-1">Start Reading!</p>
+                <p className="disappear greytext mt-2 ml-1">Start Reading!</p>
               </div>
             </Link>
           </div>
