@@ -6,7 +6,6 @@ import StoryContext from "../../contexts/StoryContext";
 
 export default function MyCarousel() {
   const stories = useContext(StoryContext);
-  console.log(stories);
 
   return (
     <Carousel itemsToShow={3}>

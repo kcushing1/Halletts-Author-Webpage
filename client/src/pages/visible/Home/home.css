@@ -2,15 +2,35 @@
   color: gray;
 }
 
+/*
 #arrow-line:hover {
   transform: scaleX(2) !important;
 }
+
+#arrow-head {
+  max-width: 1.5em;
+  max-height: auto;
+}
+*/
 
 #arrow-line {
   max-width: 8em;
   max-height: auto;
 }
-#arrow-head {
-  max-width: 1.5em;
-  max-height: auto;
+
+.animate__animated.animate__slideOutRight {
+  --animate-duration: 800ms;
+}
+.arrow-holder {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: width 2s;
+  width: 50%;
+}
+.arrow-holder:hover {
+  width: 100%;
+}
+.arrow-holder:hover .disappear {
+  display: none;
 }

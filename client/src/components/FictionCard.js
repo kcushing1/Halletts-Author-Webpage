@@ -6,13 +6,11 @@ export default function FictionCard({ src, title, id }) {
   const readStory = useContext(ReadContext);
 
   function handleUpdateRead(id) {
-    console.log("read story id: ", id);
     const read = fetch("/api/flashfiction/" + id);
     read
       .then((resp) => resp.json())
       .then((res) => {
-        console.log("the GET id res: ", res);
-        readStory.update({ ...readStory, ...res });
+        readStory.update({ ...readStory, ...res, isBeingRead: true });
       });
   }
 

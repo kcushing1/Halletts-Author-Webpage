@@ -17,7 +17,6 @@ export default function Contact() {
   }
 
   function handleSubmitMessage(e) {
-    console.log("btn clicked message", message);
     if (message.name && message.email && message.text) {
       const send = fetch("/api/message/create", {
         method: "POST",
@@ -29,15 +28,9 @@ export default function Contact() {
       send
         .then((resp) => resp.json())
         .then((res) => {
-          console.log("res post msg", res);
           setMessageSent({ hasBeenSent: true });
-          clearInput("sayhi");
         });
     }
-  }
-
-  function clearInput() {
-    document.getElementById("sayhi").value("'");
   }
 
   return (
@@ -102,7 +95,7 @@ export default function Contact() {
             onChange={handleInputChange}
           ></textarea>
           <button
-            type="button"
+            type="submit"
             className="btn border contact-btn"
             onClick={handleSubmitMessage}
           >

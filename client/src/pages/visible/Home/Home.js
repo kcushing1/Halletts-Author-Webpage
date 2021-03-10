@@ -1,9 +1,9 @@
 import React from "react";
 import "./home.css";
+import { Link } from "react-router-dom";
 import Row from "../../../utils/Row";
 import Col from "../../../utils/Row";
-import { IconContext } from "react-icons";
-import { BsArrowRight } from "react-icons/bs";
+//import { Animated } from "react-animated-css";
 
 export default function Home() {
   return (
@@ -17,15 +17,14 @@ export default function Home() {
             are in the right place!
           </p>
 
-          <div className="row">
-            <div className="col ml-5 mr-0">
-              <img src="./images/arrow-line.png" id="arrow-line" />
+          <div className="ml-4">
+            <Link to="/flashfiction">
+              <div className="arrow-holder">
+                <img src="./images/download2.png" id="arrow-line" />
 
-              <img src="./images/download.jpg" id="arrow-head" />
-            </div>
-            <div className="col text-left m-l-0">
-              <p>Start Reading!</p>
-            </div>
+                <p class="disappear greytext mt-2 ml-1">Start Reading!</p>
+              </div>
+            </Link>
           </div>
         </div>
         <div className="col">
