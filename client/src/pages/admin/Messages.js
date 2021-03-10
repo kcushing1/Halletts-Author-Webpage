@@ -68,7 +68,7 @@ export default function Messages() {
                 />
                 <button
                   type="button"
-                  className="btn border delete-btn"
+                  className="btn border admin-btn"
                   id={specificMessage.id}
                   onClick={handleDeleteMessage}
                 >

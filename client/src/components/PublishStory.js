@@ -18,7 +18,7 @@ export default function PublishStory({ name, onChange, btnClick }) {
         onChange={onChange}
         rows="10"
       ></textarea>
-      <button type="button" className="btn border" onClick={btnClick}>
+      <button type="button" className="btn border admin-btn" onClick={btnClick}>
         Publish
       </button>
     </div>

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import AdminStory from "../../components/AdminStory";
 import List from "../../components/List";
 import PublishStory from "../../components/PublishStory";
 
 export default function AdminFlashFiction() {
   const [stories, setStories] = useState([]);
   const [newStory, setNewStory] = useState([]);
+  const [viewStory, setViewStory] = useState({ view: false });
 
   useEffect(() => {
     loadStories();
@@ -21,12 +23,10 @@ export default function AdminFlashFiction() {
 
   function handleInputChange(e) {
     const { name, value } = e.target;
-    console.log("name and value", name, value);
     setNewStory({ ...newStory, [name]: value });
   }
 
   function handlePostNewStory(e) {
-    console.log("newpost");
     if (newStory.title && newStory.text) {
       const send = fetch("/api/flashfiction/create", {
         method: "POST",
@@ -46,6 +46,17 @@ export default function AdminFlashFiction() {
     }
   }
 
+  function handleReviewStory(e) {
+    console.log(e.target.id);
+    let review = fetch("/api/flashfiction/" + e.target.id);
+    review
+      .then((resp) => resp.json())
+      .then((res) => {
+        setViewStory({ ...res, view: true });
+        console.log(viewStory);
+      });
+  }
+
   return (
     <div className="row m-2">
       <div className="col-3 m-3">
@@ -53,19 +64,23 @@ export default function AdminFlashFiction() {
           return (
             <List
               id={title.id}
-              onClick={() => console.log("tbd")}
+              key={title.id}
+              onClick={handleReviewStory}
               item={title.title}
             />
           );
         })}
       </div>
       <div className="col">
-        <p>textbox for new with publish</p>
-        <PublishStory
-          name="title"
-          onChange={handleInputChange}
-          btnClick={handlePostNewStory}
-        />
+        {viewStory.view ? (
+          <AdminStory title={viewStory.title} text={viewStory.text} />
+        ) : (
+          <PublishStory
+            name="Title"
+            onChange={handleInputChange}
+            btnClick={handlePostNewStory}
+          />
+        )}
         <p>upload image here, make sure not too large</p>
       </div>
     </div>
