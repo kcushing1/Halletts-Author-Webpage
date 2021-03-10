@@ -42,7 +42,7 @@ function App() {
 
   useEffect(() => {
     loadStories();
-    setRead({ ...placeholderStory, ...update });
+    setRead(placeholderStory);
     console.log("read is", read);
   }, []);
 
@@ -52,7 +52,7 @@ function App() {
         <Switch>
           <Container>
             <StoryContext.Provider value={stories}>
-              <ReadContext.Provider value={read}>
+              <ReadContext.Provider value={{ ...read, update }}>
                 <Route exact path="/login">
                   <Login />
                 </Route>

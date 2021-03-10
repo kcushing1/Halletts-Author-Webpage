@@ -12,7 +12,7 @@ export default function FictionCard({ src, title, id }) {
       .then((resp) => resp.json())
       .then((res) => {
         console.log("the GET id res: ", res);
-        //update({ ...readStory, ...res });
+        readStory.update({ ...readStory, ...res });
       });
   }
 
