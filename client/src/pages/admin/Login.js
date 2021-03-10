@@ -14,6 +14,44 @@ export default function Login() {
 
   function handleLogin(e) {
     console.log("log in, suckers");
+    const loginData = {
+      username: user.username,
+      password: user.password,
+    };
+    //do nothing if there is no input
+    if (!loginData.username || !loginData.password) return;
+
+    let allowUser = fetch("/api/auth/login", {
+      method: "POST",
+      body: JSON.stringify(loginData),
+    });
+
+    allowUser
+      .then((resp) => {
+        resp.json();
+        console.log("after fetch login");
+      })
+      .then((user) => console.log("in the clear", user));
+  }
+  function handleCreateUser(e) {
+    console.log("create user ftn");
+    const loginData = {
+      username: user.username,
+      password: user.password,
+    };
+    console.log(loginData);
+    if (!loginData.username || !loginData.password) return;
+
+    const newUser = fetch("/api/auth/signup", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(loginData),
+    });
+    newUser
+      .then((resp) => resp.json())
+      .then((res) => console.log("maybe created?"));
   }
 
   return (
@@ -42,10 +80,17 @@ export default function Login() {
         </div>
         <button
           type="button"
-          className="btn border greytext"
+          className="btn border greytext mx-2"
           onClick={handleLogin}
         >
           Log in
+        </button>
+        <button
+          type="button"
+          className="btn border greytext mx-2"
+          onClick={handleCreateUser}
+        >
+          Sign Up
         </button>
       </form>
       <div id="formFooter" className="m-3">

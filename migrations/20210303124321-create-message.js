@@ -12,12 +12,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
         validate: {
-          len: [1],
+          len: [1, 150],
         },
       },
       email: {
         type: Sequelize.STRING,
-        isEmail: true,
+        validate: {
+          isEmail: true,
+        },
       },
       text: {
         type: Sequelize.STRING,

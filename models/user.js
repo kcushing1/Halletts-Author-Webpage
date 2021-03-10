@@ -28,8 +28,6 @@ module.exports = (sequelize, DataTypes) => {
         validate: {
           len: [8, 86],
           is: /^([a-zA-Z0-9 _-]+)$/i,
-          msg:
-            "Password must contain only alphanumeric characters, - or _, and have a length of 8 to 86 characters.",
         },
       },
     },
@@ -38,5 +36,10 @@ module.exports = (sequelize, DataTypes) => {
       modelName: "User",
     }
   );
+
+  User.prototype.validPassword = function (password) {
+    return password === this.password;
+  };
+
   return User;
 };
