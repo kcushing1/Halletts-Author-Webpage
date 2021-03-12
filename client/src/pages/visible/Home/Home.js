@@ -12,7 +12,7 @@ export default function Home() {
         <div className="col text-left ml-4">
           <h1>WELCOME!</h1>
           <p className="m-4 greytext">
-            You have found the author site of Hallett Sargent. if you enjoy rich
+            You have found the author site of Hallett Sargent. If you enjoy rich
             character narratives, learning something new, and mysteries then you
             are in the right place!
           </p>
@@ -29,35 +29,35 @@ export default function Home() {
         </div>
         <div className="col mr-2 mb-4">
           <Row>
-            <div className="col m-1">
+            <div className="col m-1 rounded">
               <img src="/images/thumbnails/flowers_tn.jpg" />
             </div>
-            <div className="col m-1">
+            <div className="col m-1 rounded">
               <img src="/images/thumbnails/flowers_tn.jpg" />
             </div>
-            <div className="col m-1">
-              <img src="/images/thumbnails/flowers_tn.jpg" />
-            </div>
-          </Row>
-          <Row>
-            <div className="col m-1">
-              <img src="/images/thumbnails/flowers_tn.jpg" />
-            </div>
-            <div className="col m-1">
-              <img src="/images/thumbnails/flowers_tn.jpg" />
-            </div>
-            <div className="col m-1">
+            <div className="col m-1 rounded">
               <img src="/images/thumbnails/flowers_tn.jpg" />
             </div>
           </Row>
           <Row>
-            <div className="col m-1">
+            <div className="col m-1 rounded">
               <img src="/images/thumbnails/flowers_tn.jpg" />
             </div>
-            <div className="col m-1">
+            <div className="col m-1 rounded">
               <img src="/images/thumbnails/flowers_tn.jpg" />
             </div>
-            <div className="col m-1">
+            <div className="col m-1 rounded">
+              <img src="/images/thumbnails/flowers_tn.jpg" />
+            </div>
+          </Row>
+          <Row>
+            <div className="col m-1 rounded">
+              <img src="/images/thumbnails/flowers_tn.jpg" />
+            </div>
+            <div className="col m-1 rounded">
+              <img src="/images/thumbnails/flowers_tn.jpg" />
+            </div>
+            <div className="col m-1 rounded">
               <img src="/images/thumbnails/flowers_tn.jpg" />
             </div>
           </Row>

@@ -12,16 +12,20 @@ export default function About() {
     <div id="about">
       <div className="row m-3 hidescroll">
         <div className="col aboutbox text-left">
-          <h4>An author and educator with a strong curiosity</h4>
+          <h4>AUTHOR, EDUCATOR, AND EXPLORER</h4>
           <p className="greytext text-left">
-            Lorem ipsum dolor sit amet, dolore soleat cum te, sint equidem an
-            sea. Nec vide nonumy tibique at, eum id porro periculis adolescens.
-            Ea sed modo dictas eligendi. Aperiri dolores sit te, id sea eros
-            molestie. Pri et latine percipit pertinax, ad duo tamquam nominati
-            periculis. An duo hinc persecuti, ius scaevola mandamus ad. In nulla
-            erroribus theophrastus quo, ne atqui mundi tritani nam, et sed agam
-            efficiantur. Ei bonorum urbanitas cotidieque pro, quem dicant pro
-            te. Facilis reprimique pro cu. Ullum delenit dignissim ius ea.
+            Hallett Sargent is a New England author whose focus is toward
+            stories that encompass a duality of local and global significance.
+            She writes in the hope of providing a comfortable place for
+            introspective thought that translates beyond the narrative and into
+            actions on a broader field. Her first book,
+            <span className="font-italic"> Our Bathroom Mirror</span>, takes
+            cues from her environmental and educational work to build complexity
+            in what may at first appear to be a simple world. Sargent thrives on
+            stories that provoke logical speculation and fervent emotion in
+            equal turn. A genuine appreciation for narratives of unique
+            characters is shared with those curious readers who pick up her
+            works, which uncover a subtle yet deep experience.
           </p>
         </div>
         <Col>

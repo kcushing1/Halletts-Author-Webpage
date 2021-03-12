@@ -38,12 +38,11 @@ export default function Contact() {
       <Col>
         <Row>
           <div className="col m-3">
-            <h4>Let's get in touch!</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.{" "}
+            <h4>LET'S GET IN TOUCH!</h4>
+            <p className="greytext">
+              To see more active updates on my writing, current reads, or
+              interesting tidbits, you can visit any of my various social media
+              platforms. Or leave me a message here!{" "}
             </p>
           </div>
         </Row>

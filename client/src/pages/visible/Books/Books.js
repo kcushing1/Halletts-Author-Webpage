@@ -18,7 +18,7 @@ export default function Books() {
       <div className="col mr-4">
         <Row>
           <Col>
-            <h2>Our Bathroom Mirror</h2>
+            <h2>OUR BATHROOM MIRROR</h2>
             <p className="cursive">
               "This book is the total bomb dot com, yo" -Kasey
             </p>
@@ -26,22 +26,34 @@ export default function Books() {
         </Row>
         <Row>
           <Col>
-            <p>
-              Lorem ipsum dolor sit amet, dolore soleat cum te, sint equidem an
-              sea. Nec vide nonumy tibique at, eum id porro periculis
-              adolescens. Ea sed modo dictas eligendi. Aperiri dolores sit te,
-              id sea eros molestie. Pri et latine percipit pertinax, ad duo
-              tamquam nominati periculis. An duo hinc persecuti, ius scaevola
-              mandamus ad. In nulla erroribus theophrastus quo, ne atqui mundi
-              tritani nam, et sed agam efficiantur. Ei bonorum urbanitas
-              cotidieque pro, quem dicant pro te. Facilis reprimique pro cu.
-              Ullum delenit dignissim ius ea.
+            <p className="greytext">
+              Martin Kemp has been working hard to be a good detective in a
+              complicated city when one disastrous night leaves him struggling
+              to manage PTSD. Relocating to a small seaside town where he can
+              spend time piecing himself back together, Martin is glad to pick
+              up work at a single-room PI agency where he is responsible for
+              nothing more complicated than mitigating the townies’ misplaced
+              gripes with one another. Yet Martin’s quiet days are interrupted
+              when a string of arsons presents him with a case that is far too
+              dire to leave alone. Tracking down an arsonist turns out to be the
+              least of Martin’s troubles when he is woken one night to the
+              sounds of a confused and frantic ghost going through the shelves
+              of his bathroom cabinets. Unable to get rid of the ghost, Martin
+              must resign himself to solving a case he never wanted any part in
+              while an irritating ally rides shotgun on a search that leads them
+              further and further across the country. The deeper they delve into
+              the tangled threads of the investigation, the more people seem to
+              be after them. Martin and Noé will have to learn to trust one
+              another if they are going to survive but cracking the case will
+              test more than their shaky friendship, it also means breaking down
+              a growing secret of Martin’s own. A secret which, if revealed, may
+              unravel Noé’s very existence.
             </p>
           </Col>
         </Row>
         <div className=" row mt-4">
           <Col>
-            <p className="greytext">
+            <p>
               We don't yet know the release date, but in the meantime find your
               next great read!
             </p>

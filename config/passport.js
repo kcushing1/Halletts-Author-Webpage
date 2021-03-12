@@ -40,7 +40,7 @@ passport.serializeUser((user, cb) => {
   cb(null, user.id);
 });
 passport.deserializeUser((id, cb) => {
-  db.User.findOne({ id: id }, (err, user) => {
+  db.User.findOne({ where: { id: id } }, (err, user) => {
     const userInfo = {
       username: user.username,
     };

@@ -17,7 +17,7 @@ export default function FictionCard({ src, title, id }) {
   return (
     <div
       id={id}
-      className="card m-3"
+      className="card m-2"
       style={{ width: "15em", height: "15em" }}
       onClick={() => handleUpdateRead(id)}
     >
