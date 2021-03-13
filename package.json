@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "description": "Author Website",
   "main": "server.js",
-  "homepage": "https://proj3-author-website.herokuapp.com/",
+  "homepage": "http://proj3-author-website.herokuapp.com/",
   "dependencies": {
     "@elsdoerfer/react-arrow": "^1.0.4",
     "babel-jest": "^24.9.0",
     "bcryptjs": "^2.4.3",
-    "bootstrap": "^4.6.0",
     "bootstrap-react": "^0.5.0-alpha.14",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
@@ -48,7 +47,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kcushing1/Halletts-Author-Website.git"
+    "url": "git+http://github.com/kcushing1/Halletts-Author-Website.git"
   },
   "eslintConfig": {
     "extends": [
