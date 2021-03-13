@@ -81,7 +81,6 @@ export default function AdminFlashFiction() {
             btnClick={handlePostNewStory}
           />
         )}
-        <p>upload image here, make sure not too large</p>
       </div>
     </div>
   );

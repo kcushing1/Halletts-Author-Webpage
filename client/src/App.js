@@ -76,9 +76,9 @@ function App() {
                     >
                       <AdminNavbar />
                     </Route>
-                    <SecuredRoute exact path="/admin">
+                    <Route exact path="/admin">
                       <AdminHome />
-                    </SecuredRoute>
+                    </Route>
                     <Route exact path="/admin/flashfiction">
                       <AdminFlashFiction />
                     </Route>
