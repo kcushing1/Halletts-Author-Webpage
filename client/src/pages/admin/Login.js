@@ -4,22 +4,14 @@ import Col from "../../utils/Col";
 import FormInput from "../../utils/FormInput";
 import Row from "../../utils/Row";
 import "./admin.css";
-import { useCookies } from "react-cookie";
 
 export default function Login() {
   const [user, setUser] = useState([]);
   const auth = useContext(AuthContext);
-  const [cookies, setCookies] = useCookies(["unnamed-cookies"]);
 
   function handleInputChange(e) {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
-  }
-
-  function changeCookies(newName) {
-    setCookies("new-name", newName, {
-      path: ["/admin", "/admin/flashfiction", "/admin/messages"],
-    });
   }
 
   function handleLogin(e) {

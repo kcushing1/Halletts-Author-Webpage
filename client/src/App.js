@@ -18,13 +18,11 @@ import Messages from "./pages/admin/Messages";
 import Login from "./pages/admin/Login";
 import AuthContext from "./contexts/AuthContext";
 import SecuredRoute from "./utils/SecuredRoute";
-import { useCookies, CookiesProvider } from "react-cookie";
 
 function App() {
   const [stories, setStories] = useState([]);
   const [read, setRead] = useState([]);
   const [auth, setAuth] = useState();
-  const [cookies, setCookie, removeCookie] = useCookies(["unnamed-cookie"]);
 
   const onAuth = (data) => {
     setAuth({ ...data });
@@ -45,12 +43,6 @@ function App() {
 
   useEffect(() => {
     loadStories();
-    // setRead({
-    //   ...read,
-    //   title: "title",
-    //   text: "text",
-    //   image: "./images/thumbnails/flowers_tn.jpg",
-    // });
   }, []);
 
   return (
@@ -61,31 +53,25 @@ function App() {
             <Container>
               <StoryContext.Provider value={stories}>
                 <ReadContext.Provider value={{ ...read, update }}>
-                  <CookiesProvider>
-                    <Route exact path="/login">
-                      <Login />
-                    </Route>
+                  <Route exact path="/login">
+                    <Login />
+                  </Route>
 
-                    <Route
-                      exact
-                      path={[
-                        "/admin",
-                        "/admin/flashfiction",
-                        "/admin/messages",
-                      ]}
-                    >
-                      <AdminNavbar />
-                    </Route>
-                    <Route exact path="/admin">
-                      <AdminHome />
-                    </Route>
-                    <Route exact path="/admin/flashfiction">
-                      <AdminFlashFiction />
-                    </Route>
-                    <Route exact path="/admin/messages">
-                      <Messages />
-                    </Route>
-                  </CookiesProvider>
+                  <Route
+                    exact
+                    path={["/admin", "/admin/flashfiction", "/admin/messages"]}
+                  >
+                    <AdminNavbar />
+                  </Route>
+                  <Route exact path="/admin">
+                    <AdminHome />
+                  </Route>
+                  <Route exact path="/admin/flashfiction">
+                    <AdminFlashFiction />
+                  </Route>
+                  <Route exact path="/admin/messages">
+                    <Messages />
+                  </Route>
 
                   <Route
                     exact
