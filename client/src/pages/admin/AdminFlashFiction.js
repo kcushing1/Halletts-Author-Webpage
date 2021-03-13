@@ -27,6 +27,12 @@ export default function AdminFlashFiction() {
   }
 
   function handlePostNewStory(e) {
+    //randomly select an image from ten options
+    let num = Math.floor(Math.random() * 10).toString();
+    let imgString = "./images/thumbnails/gree" + num + "_tn.jpg";
+    console.log("num is ", num);
+    console.log(newStory);
+
     if (newStory.title && newStory.text) {
       const send = fetch("/api/flashfiction/create", {
         method: "POST",
@@ -35,11 +41,11 @@ export default function AdminFlashFiction() {
         },
         body: JSON.stringify({
           ...newStory,
-          image: "./images/thumbnails/bread2_tn.jpg",
+          image: imgString,
         }),
       });
       send
-        .then((resp) => resp.json())
+        //.then((resp) => resp.json())
         .then((res) => {
           console.log("res post flash", res);
         });
@@ -76,7 +82,7 @@ export default function AdminFlashFiction() {
           <AdminStory title={viewStory.title} text={viewStory.text} />
         ) : (
           <PublishStory
-            name="Title"
+            name="title"
             onChange={handleInputChange}
             btnClick={handlePostNewStory}
           />

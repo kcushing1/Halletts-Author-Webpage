@@ -3,9 +3,10 @@ import "./navbar.css";
 import NavItem from "./NavItem";
 
 export default function AdminNavbar() {
-  //Hallett Sargent as a-tag to home page</p>
-  //toggle button hamburger</p>
-  //navlinks with href/reroute and text props
+  function handleLogOut(e) {
+    console.log("log out");
+  }
+
   return (
     <nav className="row navbar navbar-expand-lg border-bottom mx-3">
       <a className="navbar-brand nav-hallett" href="/admin">
@@ -33,6 +34,7 @@ export default function AdminNavbar() {
           <NavItem text="RETURN TO MAIN" href="/" />
           <NavItem text="FLASH FICTION" href="/admin/flashfiction" />
           <NavItem text="MESSAGES" href="/admin/messages" />
+          <NavItem text="LOG OUT" href="/" onClick={handleLogOut} />
         </ul>
       </div>
     </nav>

@@ -7,7 +7,7 @@ export default function PublishStory({ name, onChange, btnClick }) {
       <FormInput
         input="text"
         name={name}
-        placeholder={name}
+        placeholder="Title"
         onChange={onChange}
       />
       <textarea

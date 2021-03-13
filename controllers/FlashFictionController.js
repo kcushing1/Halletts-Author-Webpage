@@ -23,6 +23,7 @@ module.exports = {
     })
       .then((newStory) => {
         res.json(newStory);
+        console.log("story created");
       })
       .catch((err) => {
         console.log("error is: ", err);

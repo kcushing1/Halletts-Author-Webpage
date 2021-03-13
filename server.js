@@ -14,6 +14,7 @@ app.use(express.json());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
+  console.log("using prod env");
   app.use(express.static("client/build"));
 }
 
