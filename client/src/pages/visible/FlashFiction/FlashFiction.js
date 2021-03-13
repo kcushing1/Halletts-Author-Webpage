@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import ReadContext from "../../../contexts/ReadContext";
 import Carousel from "../../../components/Carousel/MyCarousel";
 import ReadingBox from "../../../components/ReadingBox/ReadingBox";

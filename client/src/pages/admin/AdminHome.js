@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CatGif from "../../components/CatGif";
 import "./admin.css";
 

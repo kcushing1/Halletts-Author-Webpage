@@ -2,16 +2,8 @@ import React from "react";
 import "./home.css";
 import { Link } from "react-router-dom";
 import Row from "../../../utils/Row";
-import Col from "../../../utils/Row";
 import FadeDiv from "../../../utils/FadeInDown";
 import HomeGalleryImg from "./HomeGalleryImg";
-// import styled, { keyframes } from "styled-components";
-// import { fadeInDown } from "react-animations";
-
-// const fadeAnim = keyframes`${fadeInDown}`;
-// const FadeDiv = styled.div`
-//   animation: 5s ${fadeAnim};
-// `;
 
 export default function Home() {
   return (
@@ -33,7 +25,11 @@ export default function Home() {
             <div className="ml-4">
               <Link to="/flashfiction">
                 <div className="arrow-holder">
-                  <img src="./images/download2.png" id="arrow-line" />
+                  <img
+                    src="./images/download2.png"
+                    id="arrow-line"
+                    alt="arrow"
+                  />
 
                   <p className="disappear greytext mt-2 ml-1">Start Reading!</p>
                 </div>

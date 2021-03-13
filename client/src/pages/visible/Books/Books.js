@@ -2,7 +2,6 @@ import React from "react";
 import Col from "../../../utils/Col";
 import Row from "../../../utils/Row";
 import "./books.css";
-import { FaAmazon } from "react-icons/fa";
 import Button from "../../../utils/Button";
 import FadeDiv from "../../../utils/FadeInDown";
 

@@ -1,9 +1,5 @@
 import React from "react";
 import "./about.css";
-import Container from "../../../components/Container/Container";
-import VisibleNavbar from "../../../components/NavBar/VisibleNavbar";
-import Footer from "../../../components/Footer";
-import Row from "../../../utils/Row";
 import Col from "../../../utils/Col";
 import Image from "../../../utils/Image";
 import FadeDiv from "../../../utils/FadeInDown";

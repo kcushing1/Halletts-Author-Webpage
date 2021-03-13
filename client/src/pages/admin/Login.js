@@ -1,9 +1,6 @@
 import React, { useContext, useState } from "react";
 import AuthContext from "../../contexts/AuthContext";
-import Col from "../../utils/Col";
 import FadeDiv from "../../utils/FadeInDown";
-import FormInput from "../../utils/FormInput";
-import Row from "../../utils/Row";
 import "./admin.css";
 
 export default function Login() {

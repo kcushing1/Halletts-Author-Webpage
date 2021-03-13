@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./contact.css";
-import Container from "../../../components/Container/Container";
-import VisibleNavbar from "../../../components/NavBar/VisibleNavbar";
 import Col from "../../../utils/Col";
 import FormInput from "../../../utils/FormInput";
 import Row from "../../../utils/Row";

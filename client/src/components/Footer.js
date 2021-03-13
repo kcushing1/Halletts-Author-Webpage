@@ -11,6 +11,7 @@ export default function Footer() {
           href="https://portfolio-kcushing1.herokuapp.com/"
           target="_blank"
           className="greytext text-small"
+          rel="noopener noreferrer"
         >
           <p>
             <small>Made with ❤️️ by Kasey</small>

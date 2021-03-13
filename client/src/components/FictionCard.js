@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import Image from "../utils/Image";
 import ReadContext from "../contexts/ReadContext";
 
 export default function FictionCard({ src, title, id }) {
