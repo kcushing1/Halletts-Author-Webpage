@@ -12,12 +12,6 @@ const db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  console.log("using prod env");
-  app.use(express.static("client/build"));
-}
-
 app.use(
   session({
     secret: process.env.SECRET || "FreeGree",
@@ -31,6 +25,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(routes);
+
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  console.log("using prod env");
+  app.use(express.static("client/build"));
+
+  // Handle React routing, return all requests to React app
+  app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  });
+}
 
 // Start the API server
 db.sequelize.sync().then(function () {
