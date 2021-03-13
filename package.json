@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "Author Website",
   "main": "server.js",
-  "homepage": "https://proj3-author-website.herokuapp.com/",
   "dependencies": {
     "@elsdoerfer/react-arrow": "^1.0.4",
     "babel-jest": "^24.9.0",
