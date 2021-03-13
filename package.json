@@ -1,9 +1,9 @@
 {
   "name": "Hallets-Author-Website",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Author Website",
   "main": "server.js",
-  "homepage": "http://proj3-author-website.herokuapp.com/",
+  "homepage": "https://proj3-author-website.herokuapp.com/",
   "dependencies": {
     "@elsdoerfer/react-arrow": "^1.0.4",
     "babel-jest": "^24.9.0",
@@ -47,7 +47,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+http://github.com/kcushing1/Halletts-Author-Website.git"
+    "url": "git+https://github.com/kcushing1/Halletts-Author-Website.git"
   },
   "eslintConfig": {
     "extends": [
