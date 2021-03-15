@@ -6,9 +6,9 @@ module.exports = {
       "FlashFictions",
       [
         {
-          title: "story 1",
+          title: "Animal Crackers",
           text: "one upon a time",
-          image: "./images/thumbnails/bread_tn.jpg",
+          image: "./images/thumbnails/gree0_tn.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
