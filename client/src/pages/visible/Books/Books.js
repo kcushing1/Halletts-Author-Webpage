@@ -93,3 +93,5 @@ export default function Books() {
     </Row>
   );
 }
+
+//book cover image from pexels.com, by Karolina Grabowska, "Photo of Person Holding White Flower"

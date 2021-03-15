@@ -1,6 +1,6 @@
 import React from "react";
 
-const StoryContext = React.createContext({
+const ReadContext = React.createContext({
   id: Number,
   title: "",
   image: "",
@@ -8,4 +8,4 @@ const StoryContext = React.createContext({
   update: () => {},
 });
 
-export default StoryContext;
+export default ReadContext;

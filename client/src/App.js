@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useCallback } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import About from "./pages/visible/About/About";
 import VisibleNavbar from "./components/NavBar/VisibleNavbar";
@@ -18,15 +18,16 @@ import Messages from "./pages/admin/Messages";
 import Login from "./pages/admin/Login";
 import AuthContext from "./contexts/AuthContext";
 import SecuredRoute from "./utils/SecuredRoute";
+import AdminAll from "./pages/admin/AdminAll";
 
 function App() {
   const [stories, setStories] = useState([]);
   const [read, setRead] = useState([]);
   const [auth, setAuth] = useState();
 
-  const onAuth = (data) => {
-    setAuth({ ...data });
-  };
+  const onAuth = useCallback((data) => {
+    setAuth({ ...auth, ...data });
+  });
 
   const update = (data) => {
     setRead({ ...read, ...data });
@@ -56,7 +57,6 @@ function App() {
                   <Route exact path="/login">
                     <Login />
                   </Route>
-
                   <Route
                     exact
                     path={["/admin", "/admin/flashfiction", "/admin/messages"]}
@@ -66,8 +66,9 @@ function App() {
                   <Route exact path="/admin">
                     <AdminHome />
                   </Route>
+
                   <Route exact path="/admin/flashfiction">
-                    <AdminFlashFiction />
+                    <FlashFiction />
                   </Route>
                   <Route exact path="/admin/messages">
                     <Messages />
@@ -112,3 +113,21 @@ function App() {
 }
 
 export default App;
+
+{
+  /* <SecuredRoute
+                    exact
+                    path={["/admin", "/admin/flashfiction", "/admin/messages"]}
+                  >
+                    <AdminNavbar />
+                  </SecuredRoute>
+                  <SecuredRoute exact path="/admin">
+                    <AdminHome />
+                  </SecuredRoute>
+                  <SecuredRoute exact path="/admin/flashfiction">
+                    <AdminFlashFiction />
+                  </SecuredRoute>
+                  <SecuredRoute exact path="/admin/messages">
+                    <Messages />
+                  </SecuredRoute> */
+}

@@ -33,7 +33,7 @@ export default function About() {
           <FadeDiv>
             <Image
               alt="About Hallett"
-              src="./images/flowers.jpg"
+              src="./images/hallettAbout.jpg"
               className="rounded about-img mb-2"
             />
           </FadeDiv>

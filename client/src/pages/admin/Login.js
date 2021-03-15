@@ -1,7 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import AuthContext from "../../contexts/AuthContext";
 import FadeDiv from "../../utils/FadeInDown";
 import "./admin.css";
+//import { browserHistory } from "react-router";
+import { Route } from "react-router-dom";
+import AdminStory from "../../components/AdminStory";
+import Home from "../visible/Home/Home";
+import AdminHome from "./AdminHome";
 
 export default function Login() {
   const [user, setUser] = useState([]);
@@ -12,12 +17,22 @@ export default function Login() {
     setUser({ ...user, [name]: value });
   }
 
+  //when user successfully logs in, redirect them to admin page
+  useEffect(() => {
+    console.log("auth changes", auth);
+    if (auth.isLoggedIn === true) {
+      // setTimeout(() => {
+      window.location.href = "/admin";
+      // }, 3000);
+    }
+  }, [auth.isLoggedIn]);
+
   function handleLogin(e) {
-    //function handleLoginTest(e) {
     const loginData = {
       username: user.username,
       password: user.password,
     };
+
     //do nothing if there is no input
     if (!loginData.username || !loginData.password) return;
     console.log("pre fetch auth", auth);
@@ -30,49 +45,23 @@ export default function Login() {
       body: JSON.stringify(loginData),
     });
 
-    allowUser
-      .then((resp) => {
-        resp.json();
-        console.log("resp is", resp);
-        //console.log(resp.text());
-        // console.log(resp.User);
-        //console.log("after fetch login");
-        if (resp.status === 200) {
-          console.log("woohoo");
-          auth.onAuth({ isLoggedIn: true });
-          // console.log("post fetch if auth", auth);
-        } else {
-          console.log("uh oh, something went wrong");
-        }
-        //console.log("post fetch auth", auth);
-      })
-      .then(() => console.log(".thn auth", auth));
-    // .then((user) => {
-    //   if (user) {
-    //     console.log(".then user");
-    //   }
-    //   if (!user) {
-    //     console.log("no .then user");
-    //   } else {
-    //     console.log(".then third option?");
-    //   }
-    // if (user.data) {
-    //   console.log("successful login");
-    // } else {
-    //console.log("ugh, screw this login");
-    //}
-    // auth.onAuth();
-    // console.log(auth.onAuth);
-    //console.log(auth.isLoggedIn);
-    //window.location.href = "/admin";
-    //});
+    allowUser.then((resp) => {
+      resp.json();
+
+      if (resp.status === 200) {
+        //change state to isLoggedIn:true to allow access to SecuredRoutes admin pages
+        auth.onAuth({ isLoggedIn: true });
+      }
+    });
+    // .then((res) => console.log("is logged in"));
   }
   function handleCreateUser(e) {
-    console.log("create user ftn");
     const loginData = {
       username: user.username,
       password: user.password,
     };
+
+    //if no input, do nothing
     if (!loginData.username || !loginData.password) return;
 
     const newUser = fetch("/api/auth/signup", {
@@ -82,7 +71,9 @@ export default function Login() {
       },
       body: JSON.stringify(loginData),
     });
-    newUser.then((res) => (window.location.href = "/admin"));
+    newUser.then((res) => {
+      auth.onAuth({ isLoggedIn: true });
+    });
   }
 
   return (

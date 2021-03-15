@@ -1,27 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
+import Home from "../pages/visible/Home/Home";
 
-export default function SecuredRoute({ path, children }) {
-  // const auth = {
-  //   isLoggedIn: false,
-  //   onAuth() {
-  //     this.isLoggedIn = true;
-  //   },
-  //   getAuthStatus() {
-  //     return this.isLoggedIn;
-  //   },
-  // };
+export default function SecuredRoute({ children, path }) {
   const auth = useContext(AuthContext);
-  //const [auth, setAuth] = setState({
-  //  isLoggedIn: false
-  // })
+  useEffect(() => {
+    console.log(auth, "auth changes secured");
+  }, [auth.isLoggedIn]);
 
   return (
-    <Route
-      path={path}
-      render={() => (auth.isLoggedIn ? { children } : <Redirect to="/" />)}
-    ></Route>
+    <>
+      {auth.isLoggedIn === true ? (
+        <Route exact path={path}>
+          {children}
+        </Route>
+      ) : (
+        <Route exact path="/">
+          <Home />
+        </Route>
+      )}
+    </>
   );
 }
 

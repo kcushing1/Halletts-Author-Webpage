@@ -40,19 +40,19 @@ export default function Home() {
 
         <div className="col mr-2 mb-4">
           <Row>
-            <HomeGalleryImg />
-            <HomeGalleryImg />
-            <HomeGalleryImg />
+            <HomeGalleryImg num="1" />
+            <HomeGalleryImg num="2" />
+            <HomeGalleryImg num="3" />
           </Row>
           <Row>
-            <HomeGalleryImg />
-            <HomeGalleryImg />
-            <HomeGalleryImg />
+            <HomeGalleryImg num="4" />
+            <HomeGalleryImg num="5" />
+            <HomeGalleryImg num="6" />
           </Row>
           <Row>
-            <HomeGalleryImg />
-            <HomeGalleryImg />
-            <HomeGalleryImg />
+            <HomeGalleryImg num="7" />
+            <HomeGalleryImg num="8" />
+            <HomeGalleryImg num="9" />
           </Row>
         </div>
       </Row>
