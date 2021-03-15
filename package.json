@@ -1,6 +1,6 @@
 {
   "name": "Hallets-Author-Website",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Author Website",
   "main": "server.js",
   "homepage": "https://proj3-author-website.herokuapp.com/",
