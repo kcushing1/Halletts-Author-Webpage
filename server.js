@@ -28,13 +28,7 @@ app.use(routes);
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  console.log("using prod env");
   app.use(express.static("client/build"));
-
-  // Handle React routing, return all requests to React app
-  // app.use("/", function (req, res) {
-  //   res.sendFile(path.join(__dirname, "client/build", "index.html"));
-  // });
 }
 
 // Start the API server
