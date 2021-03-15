@@ -19,9 +19,11 @@ module.exports = {
       db.User.create({
         username: req.body.username,
         password: hashPassword,
-      }).then((userInfo) => {
-        res.send({ user: userInfo.id });
-      });
+      })
+        .then((userInfo) => {
+          res.send({ user: userInfo.id });
+        })
+        .catch((err) => console.log("err is: ", err));
     }
     makePw();
   },
