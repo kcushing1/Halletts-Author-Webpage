@@ -22,7 +22,7 @@ export default function Login() {
     console.log("auth changes", auth);
     if (auth.isLoggedIn === true) {
       // setTimeout(() => {
-      window.location.href = "/admin";
+      window.location.href = "/login";
       // }, 3000);
     }
   }, [auth.isLoggedIn]);
