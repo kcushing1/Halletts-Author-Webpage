@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./navbar.css";
 
 export default function ({ href, text }) {
@@ -6,9 +7,9 @@ export default function ({ href, text }) {
   return (
     <>
       <li className="nav-item">
-        <a className="nav-link navbar-text nav-lines" href={href}>
+        <Link className="nav-link navbar-text nav-lines" to={href}>
           {text}
-        </a>
+        </Link>
       </li>
     </>
   );

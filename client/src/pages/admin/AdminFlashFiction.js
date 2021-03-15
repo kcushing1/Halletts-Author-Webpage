@@ -32,6 +32,11 @@ export default function AdminFlashFiction() {
     let imgString = "./images/thumbnails/gree" + num + "_tn.jpg";
     console.log("num is ", num);
     console.log(newStory);
+    const sendBody = JSON.stringify({
+      title: newStory.title,
+      text: newStory.text,
+      image: imgString,
+    });
 
     if (newStory.title && newStory.text) {
       const send = fetch("/api/flashfiction/create", {
@@ -39,16 +44,11 @@ export default function AdminFlashFiction() {
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify({
-          ...newStory,
-          image: imgString,
-        }),
+        body: sendBody,
       });
-      send
-        //.then((resp) => resp.json())
-        .then((res) => {
-          console.log("res post flash", res);
-        });
+      send.then((res) => {
+        console.log("Flash Fiction story created!");
+      });
     }
   }
 

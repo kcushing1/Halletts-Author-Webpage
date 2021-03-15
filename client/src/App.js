@@ -68,7 +68,7 @@ function App() {
                   </Route>
 
                   <Route exact path="/admin/flashfiction">
-                    <FlashFiction />
+                    <AdminFlashFiction />
                   </Route>
                   <Route exact path="/admin/messages">
                     <Messages />
