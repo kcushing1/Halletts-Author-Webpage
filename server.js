@@ -1,11 +1,13 @@
 const express = require("express");
 const app = express();
 const passport = require("passport");
+const Sequelize = require("sequelize");
 const session = require("express-session");
 const PORT = process.env.PORT || 3001;
 const routes = require("./routes");
 require("dotenv").config();
 
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const db = require("./models");
 
 // Define middleware here
@@ -15,7 +17,9 @@ app.use(express.json());
 app.use(
   session({
     secret: process.env.SECRET || "FreeGree",
-    //cookie: { secure: true },
+    store: new SequelizeStore({
+      db: db.sequelize,
+    }),
     resave: true,
     saveUninitialized: true,
   })

@@ -30,8 +30,6 @@ export default function AdminFlashFiction() {
     //randomly select an image from ten options
     let num = Math.floor(Math.random() * 10).toString();
     let imgString = "./images/thumbnails/gree" + num + "_tn.jpg";
-    console.log("num is ", num);
-    console.log(newStory);
     const sendBody = JSON.stringify({
       title: newStory.title,
       text: newStory.text,
@@ -59,7 +57,6 @@ export default function AdminFlashFiction() {
       .then((resp) => resp.json())
       .then((res) => {
         setViewStory({ ...res, view: true });
-        console.log(viewStory);
       });
   }
 

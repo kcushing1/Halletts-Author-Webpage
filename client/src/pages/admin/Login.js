@@ -2,11 +2,6 @@ import React, { useContext, useState, useEffect } from "react";
 import AuthContext from "../../contexts/AuthContext";
 import FadeDiv from "../../utils/FadeInDown";
 import "./admin.css";
-//import { browserHistory } from "react-router";
-import { Route } from "react-router-dom";
-import AdminStory from "../../components/AdminStory";
-import Home from "../visible/Home/Home";
-import AdminHome from "./AdminHome";
 
 export default function Login() {
   const [user, setUser] = useState([]);
@@ -21,9 +16,9 @@ export default function Login() {
   useEffect(() => {
     console.log("auth changes", auth);
     if (auth.isLoggedIn === true) {
-      // setTimeout(() => {
-      window.location.href = "/login";
-      // }, 3000);
+      setTimeout(() => {
+        window.location.href = "/admin";
+      }, 3000);
     }
   }, [auth.isLoggedIn]);
 

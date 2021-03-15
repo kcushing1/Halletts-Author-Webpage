@@ -14,7 +14,13 @@ export default function Footer() {
           rel="noopener noreferrer"
         >
           <p>
-            <small>Made with ❤️️ by Kasey</small>
+            <small>
+              Made with{" "}
+              <span role="img" aria-label="heart">
+                ❤️
+              </span>
+              ️ by Kasey
+            </small>
           </p>
         </a>
       </div>
