@@ -17,7 +17,7 @@ module.exports = {
       text: {
         type: Sequelize.STRING,
         validate: {
-          len: [1, 3500],
+          len: [1, 10000],
         },
       },
       image: {

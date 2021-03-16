@@ -17,7 +17,7 @@ module.exports = {
           name: "Jane Deer",
           email: "jane@hi.com",
           text:
-            "Hi Hallett! If you're interested in self-publishing, I manage a small publishing company that works with many authors just like you! I would love to connect and talk more!",
+            "I manage a small publishing company that works with many authors just like you! I would love to connect and talk more!",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
