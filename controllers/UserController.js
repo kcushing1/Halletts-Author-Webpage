@@ -1,14 +1,6 @@
 const passport = require("../config/passport");
 const db = require("../models");
 const bcrypt = require("bcryptjs");
-const dotenv = require("dotenv");
-dotenv.config();
-
-//from auth0 documention
-const util = require("util");
-const url = require("url");
-const querystring = require("querystring");
-
 const User = db.users;
 
 module.exports = {
@@ -16,6 +8,7 @@ module.exports = {
   signup: (req, res) => {
     async function makePw() {
       const hashPassword = await bcrypt.hash(req.body.password, 10);
+      console.log("creating user, user controller");
       db.User.create({
         username: req.body.username,
         password: hashPassword,
@@ -26,5 +19,6 @@ module.exports = {
         .catch((err) => console.log("err is: ", err));
     }
     makePw();
+    console.log("made new user & pw");
   },
 };

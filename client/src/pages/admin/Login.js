@@ -48,6 +48,7 @@ export default function Login() {
       }
     });
   }
+
   function handleCreateUser(e) {
     const loginData = {
       username: user.username,
@@ -65,7 +66,10 @@ export default function Login() {
       body: JSON.stringify(loginData),
     });
     newUser.then((res) => {
-      auth.onAuth({ isLoggedIn: true });
+      res.json();
+      if (res.status === 200) {
+        auth.onAuth({ isLoggedIn: true });
+      }
     });
   }
 

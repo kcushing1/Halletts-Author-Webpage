@@ -6,7 +6,6 @@ const db = require("../models");
 
 passport.use(
   new LocalStrategy((username, password, done) => {
-    console.log("in local strategy");
     db.User.findOne({
       where: {
         username: username,

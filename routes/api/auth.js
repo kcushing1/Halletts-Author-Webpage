@@ -3,7 +3,7 @@ const passport = require("../../config/passport");
 const UserController = require("../../controllers/UserController");
 const router = express.Router();
 
-router.get("/signup", UserController.signup);
+router.post("/signup", UserController.signup);
 router.post("/login", passport.authenticate("local"), (req, res) => {
   res.json(req.user.dataValues);
 });
