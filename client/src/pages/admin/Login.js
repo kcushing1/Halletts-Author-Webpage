@@ -44,11 +44,9 @@ export default function Login() {
       resp.json();
 
       if (resp.status === 200) {
-        //change state to isLoggedIn:true to allow access to SecuredRoutes admin pages
         auth.onAuth({ isLoggedIn: true });
       }
     });
-    // .then((res) => console.log("is logged in"));
   }
   function handleCreateUser(e) {
     const loginData = {

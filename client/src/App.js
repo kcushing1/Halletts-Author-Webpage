@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect, useContext, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import About from "./pages/visible/About/About";
 import VisibleNavbar from "./components/NavBar/VisibleNavbar";
@@ -17,8 +17,6 @@ import AdminFlashFiction from "./pages/admin/AdminFlashFiction";
 import Messages from "./pages/admin/Messages";
 import Login from "./pages/admin/Login";
 import AuthContext from "./contexts/AuthContext";
-import SecuredRoute from "./utils/SecuredRoute";
-import AdminAll from "./pages/admin/AdminAll";
 
 function App() {
   const [stories, setStories] = useState([]);
