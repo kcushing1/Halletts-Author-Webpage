@@ -3,6 +3,7 @@
 .env
 .package-lock.json
 package-lock.json
+build
 
 # dependencies
 node_modules
