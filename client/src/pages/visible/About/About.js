@@ -1,7 +1,6 @@
 import React from "react";
 import "./about.css";
 import Col from "../../../utils/Col";
-import Image from "../../../utils/Image";
 import FadeDiv from "../../../utils/FadeInDown";
 
 export default function About() {
@@ -31,7 +30,7 @@ export default function About() {
         </div>
         <Col>
           <FadeDiv>
-            <Image
+            <img
               alt="About Hallett"
               src="./images/hallettAbout.jpg"
               className="rounded about-img mb-2"
