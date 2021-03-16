@@ -1,32 +1,30 @@
 "use strict";
+
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("Messages", {
+    await queryInterface.createTable("FlashFictions", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      name: {
+      title: {
         type: Sequelize.STRING,
-        allowNull: false,
-        validate: {
-          len: [1, 150],
-        },
-      },
-      email: {
-        type: Sequelize.STRING,
-        validate: {
-          isEmail: true,
-        },
-      },
-      text: {
-        type: Sequelize.TEXT,
-        allowNull: false,
         validate: {
           len: [1],
         },
+        allowNull: false,
+      },
+      text: {
+        type: Sequelize.TEXT(10000),
+        validate: {
+          len: [1],
+        },
+        allowNull: false,
+      },
+      image: {
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
@@ -39,6 +37,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("Messages");
+    await queryInterface.dropTable("FlashFictions");
   },
 };
