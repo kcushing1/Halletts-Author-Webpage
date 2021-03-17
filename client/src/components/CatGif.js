@@ -6,7 +6,7 @@ export default function CatGif() {
   let [catGif, setCatGif] = useState([]);
 
   function loadGiphy() {
-    let giphyAPI = ybBRMVWaKQggpR921jK2HwDEBcuDKd8b;
+    let giphyAPI = "ybBRMVWaKQggpR921jK2HwDEBcuDKd8b";
     let giphyURL =
       "https://api.giphy.com/v1/gifs/search?api_key=" +
       giphyAPI +
