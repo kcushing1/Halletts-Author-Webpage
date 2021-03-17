@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "omg0hGosh!",
+    "use_env_variable": "MYSQL_PW",
     "database": "authorhallett_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

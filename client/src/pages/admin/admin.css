@@ -8,6 +8,10 @@
 }
 
 .admin-btn {
+  background-color: lightgray !important;
+  color: black !important;
+}
+/*.admin-btn {
   background-color: #e6f7fd !important;
   color: grey !important;
-}
+}*/

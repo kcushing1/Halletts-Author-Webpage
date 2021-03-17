@@ -21,11 +21,8 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       text: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT("long"),
         allowNull: false,
-        validate: {
-          len: [1, 3500],
-        },
       },
       image: DataTypes.STRING,
     },
