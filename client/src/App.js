@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import About from "./pages/visible/About/About";
 import VisibleNavbar from "./components/NavBar/VisibleNavbar";
@@ -23,9 +23,9 @@ function App() {
   const [read, setRead] = useState([]);
   const [auth, setAuth] = useState();
 
-  const onAuth = useCallback((data) => {
+  const onAuth = (data) => {
     setAuth({ ...auth, ...data });
-  });
+  };
 
   const update = (data) => {
     setRead({ ...read, ...data });
@@ -111,21 +111,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <SecuredRoute
-                    exact
-                    path={["/admin", "/admin/flashfiction", "/admin/messages"]}
-                  >
-                    <AdminNavbar />
-                  </SecuredRoute>
-                  <SecuredRoute exact path="/admin">
-                    <AdminHome />
-                  </SecuredRoute>
-                  <SecuredRoute exact path="/admin/flashfiction">
-                    <AdminFlashFiction />
-                  </SecuredRoute>
-                  <SecuredRoute exact path="/admin/messages">
-                    <Messages />
-                  </SecuredRoute> */
-}

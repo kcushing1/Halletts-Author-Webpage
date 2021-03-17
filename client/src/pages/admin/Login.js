@@ -14,11 +14,10 @@ export default function Login() {
 
   //when user successfully logs in, redirect them to admin page
   useEffect(() => {
-    console.log("auth changes", auth);
     if (auth.isLoggedIn === true) {
       setTimeout(() => {
         window.location.href = "/admin";
-      }, 3000);
+      }, 1500);
     }
   }, [auth.isLoggedIn]);
 
@@ -30,7 +29,6 @@ export default function Login() {
 
     //do nothing if there is no input
     if (!loginData.username || !loginData.password) return;
-    console.log("pre fetch auth", auth);
 
     let allowUser = fetch("/api/auth/authcook", {
       method: "POST",
