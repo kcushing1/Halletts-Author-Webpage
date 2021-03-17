@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import env from "react-dotenv";
-require("dotenv").config();
+//import env from "react-dotenv";
+//require("dotenv").config();
 
 export default function CatGif() {
   let [catGif, setCatGif] = useState([]);
 
   function loadGiphy() {
-    let giphyAPI = env.REACT_APP_GIPHY_KEY;
+    let giphyAPI = ybBRMVWaKQggpR921jK2HwDEBcuDKd8b;
     let giphyURL =
       "https://api.giphy.com/v1/gifs/search?api_key=" +
       giphyAPI +
@@ -22,7 +22,7 @@ export default function CatGif() {
   }
 
   useEffect(() => {
-    //loadGiphy();
+    loadGiphy();
   }, []);
 
   return (
