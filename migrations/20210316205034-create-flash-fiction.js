@@ -17,7 +17,7 @@ module.exports = {
         allowNull: false,
       },
       text: {
-        type: Sequelize.TEXT(10000),
+        type: Sequelize.STRING,
         validate: {
           len: [1],
         },
