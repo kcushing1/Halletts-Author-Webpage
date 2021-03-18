@@ -14,6 +14,7 @@ export default function Login() {
   }
 
   //when user successfully logs in, redirect them to admin page
+  //window change does not work on
   //useEffect(() => {
   //  if (auth.isLoggedIn === true) {
   //setTimeout(() => {
@@ -112,7 +113,7 @@ export default function Login() {
             Sign Up
           </button>
           {auth.isLoggedIn ? (
-            <button>
+            <button type="button" className="btn border admin-btn mx-2">
               <Link to="/admin">Go to Admin</Link>
             </button>
           ) : null}

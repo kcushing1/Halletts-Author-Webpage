@@ -5,19 +5,18 @@ import AuthContext from "../../contexts/AuthContext";
 
 export default function AdminNavbar() {
   const auth = useContext(AuthContext);
+
   function handleLogOut(e) {
-    setTimeout(() => {
-      auth.onAuth({ isLoggedIn: false });
-      console.log(auth, "logout");
-      window.location.href = "/";
-    }, 5000);
+    //setTimeout(() => {
+    auth.onAuth({ isLoggedIn: false });
+    //}, 5000);
   }
 
   return (
     <nav className="row navbar navbar-expand-lg border-bottom mx-3">
-      <a className="navbar-brand nav-hallett" href="/admin">
+      <Link className="navbar-brand nav-hallett" to="/admin">
         HALLETT
-      </a>
+      </Link>
 
       <button
         className="navbar-toggler navbar-light greytext border"

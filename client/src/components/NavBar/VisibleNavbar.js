@@ -5,9 +5,9 @@ import NavItem from "./NavItem";
 export default function VisibleNavbar() {
   return (
     <nav className="navbar navbar-expand-md border-bottom mx-3">
-      <a className="navbar-brand nav-hallett" href="/">
+      <Link className="navbar-brand nav-hallett" to="/">
         HALLETT
-      </a>
+      </Link>
 
       <button
         className="navbar-toggler navbar-light greytext border"

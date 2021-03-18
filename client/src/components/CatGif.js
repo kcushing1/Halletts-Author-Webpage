@@ -11,12 +11,11 @@ export default function CatGif() {
       "https://api.giphy.com/v1/gifs/search?api_key=" +
       giphyAPI +
       "&q=cats&limit=3&offset=0&rating=g&lang=en";
-    console.log("KEY IS: ", giphyAPI);
+
     let catgifs = fetch(giphyURL);
     catgifs
       .then((resp) => resp.json())
       .then((res) => {
-        console.log("gif res is: ", res.data);
         setCatGif(res.data);
       });
   }
