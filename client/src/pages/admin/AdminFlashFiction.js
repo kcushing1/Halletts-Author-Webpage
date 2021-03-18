@@ -45,7 +45,7 @@ export default function AdminFlashFiction() {
         body: sendBody,
       });
       send.then((res) => {
-        console.log("Flash Fiction story created!");
+        // console.log("Flash Fiction story created!");
       });
     }
   }
