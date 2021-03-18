@@ -1,6 +1,7 @@
 import React from "react";
 import "./navbar.css";
 import NavItem from "./NavItem";
+import { Link } from "react-router-dom";
 
 export default function VisibleNavbar() {
   return (
