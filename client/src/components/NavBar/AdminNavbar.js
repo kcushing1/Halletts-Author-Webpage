@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "./navbar.css";
 import NavItem from "./NavItem";
 import AuthContext from "../../contexts/AuthContext";
+import { Link } from "react-router-dom";
 
 export default function AdminNavbar() {
   const auth = useContext(AuthContext);
