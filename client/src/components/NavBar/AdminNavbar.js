@@ -37,8 +37,8 @@ export default function AdminNavbar() {
       >
         <ul className="navbar-nav">
           <NavItem text="HOME" href="/admin" />
-          <NavItem text="FLASH FICTION" href="/admin/flashfiction" />
-          <NavItem text="MESSAGES" href="/admin/messages" />
+          <NavItem text="FLASH FICTION" href="/admin-flashfiction" />
+          <NavItem text="MESSAGES" href="/admin-messages" />
           <NavItem text="RETURN TO MAIN" href="/" />
           <NavItem text="LOG OUT" href="/" onClick={handleLogOut} />
         </ul>

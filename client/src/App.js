@@ -57,7 +57,7 @@ function App() {
                   </Route>
                   <Route
                     exact
-                    path={["/admin", "/admin/flashfiction", "/admin/messages"]}
+                    path={["/admin", "/admin-flashfiction", "/admin-messages"]}
                   >
                     <AdminNavbar />
                   </Route>
@@ -65,10 +65,10 @@ function App() {
                     <AdminHome />
                   </Route>
 
-                  <Route exact path="/admin/flashfiction">
+                  <Route exact path="/admin-flashfiction">
                     <AdminFlashFiction />
                   </Route>
-                  <Route exact path="/admin/messages">
+                  <Route exact path="/admin-messages">
                     <Messages />
                   </Route>
 
