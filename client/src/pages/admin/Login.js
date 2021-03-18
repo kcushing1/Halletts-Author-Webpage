@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import AuthContext from "../../contexts/AuthContext";
 import FadeDiv from "../../utils/FadeInDown";
 import "./admin.css";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [user, setUser] = useState([]);
@@ -13,13 +14,13 @@ export default function Login() {
   }
 
   //when user successfully logs in, redirect them to admin page
-  useEffect(() => {
-    if (auth.isLoggedIn === true) {
-      setTimeout(() => {
-        window.location.href = "/admin";
-      }, 1500);
-    }
-  }, [auth.isLoggedIn]);
+  //useEffect(() => {
+  //  if (auth.isLoggedIn === true) {
+  //setTimeout(() => {
+  //  window.location.href = "/admin";
+  //  }, 1500);
+  //   }
+  // }, [auth.isLoggedIn]);
 
   function handleLogin(e) {
     const loginData = {
@@ -110,6 +111,11 @@ export default function Login() {
           >
             Sign Up
           </button>
+          {auth.isLoggedIn ? (
+            <button>
+              <Link to="/admin">Go to Admin</Link>
+            </button>
+          ) : null}
         </form>
         <div id="formFooter" className="m-3">
           <a className="greytext" href="/">
